@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import appSettings = require("application-settings");
+import { Router } from "@angular/router";
 
 @Component({
     moduleId: module.id,
@@ -6,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: 'home.component.html'
 })
 export class HomeComponent implements OnInit {
-    constructor() { }
+    constructor(private router: Router) { }
 
     ngOnInit() { }
+
+    logout(){
+        appSettings.clear();
+        this.router.navigate(['/login']);
+
+    }
 }

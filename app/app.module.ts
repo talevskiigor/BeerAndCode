@@ -6,6 +6,8 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { AppComponent } from "./app.component";
 import {AuthService, ConfigService} from './services';
 
+import { AuthGuard } from './guards/auth.guard';
+
 import { routesComponents, routesConfig} from './app.routes';
 
 @NgModule({
@@ -21,10 +23,11 @@ import { routesComponents, routesConfig} from './app.routes';
         NativeScriptHttpModule,
         NativeScriptFormsModule
     ],
-    schemas: [NO_ERRORS_SCHEMA],
+    //schemas: [NO_ERRORS_SCHEMA],
     providers: [
         AuthService,
-        ConfigService
+        ConfigService,
+        AuthGuard
     ]
 })
 export class AppModule { }

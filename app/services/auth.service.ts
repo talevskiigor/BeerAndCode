@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Rx';
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/do";
 
+import appSettings = require("application-settings");
+
 import { ConfigService } from './config.service';
 
 @Injectable()
@@ -26,8 +28,8 @@ export class AuthService {
         )
         .map(res=>res.json())
         .do(data=>{
+            appSettings.setBoolean('login',true);
             console.log('We get data from the server:', JSON.stringify(data));
-
         }).catch(this.handleErrors);
         
 
