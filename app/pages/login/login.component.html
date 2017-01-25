@@ -1,0 +1,8 @@
+<StackLayout #container class="form">
+    <Image src="res://logo" stretch="none" horizontalAlignment="center"></Image>
+    <TextField [(ngModel)]="username" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" class="input-field"></TextField>
+    <TextField [(ngModel)]="password"  hint="Password" secure="true" class="input-field"></TextField>
+
+    <Button text="Login" class="btn btn-primary" (tap)="login()"></Button>
+    <Button text="Forgot your password" (tap)="forgot()" borderless-btn class="btn"></Button>
+</StackLayout>
